@@ -1,28 +1,61 @@
 // swift-tools-version: 5.7
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "EqualsOverhead",
-    products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "EqualsOverhead",
-            targets: ["EqualsOverhead"]),
-    ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .benchmark
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "EqualsOverhead",
-            dependencies: []),
-        .testTarget(
-            name: "EqualsOverheadTests",
-            dependencies: ["EqualsOverhead"]),
+        .equalsOverhead,
     ]
 )
+
+extension Product {
+    
+    static let equalsOverhead = library(
+        name: .equalsOverhead,
+        targets: [
+            .equalsOverhead
+        ]
+    )
+}
+
+extension Target {
+    
+    static let equalsOverhead = executableTarget(
+        name: .equalsOverhead,
+        dependencies: [
+            .benchmark
+        ]
+    )
+}
+
+extension String {
+    
+    static let equalsOverhead: Self = "EqualsOverhead"
+}
+
+extension Package.Dependency {
+    
+    static let benchmark = Package.Dependency.package(
+        url: .benchmarkURL,
+        from: .init(0, 1, 2)
+    )
+}
+
+extension Target.Dependency {
+    
+    static let benchmark = product(
+        name: .benchmark,
+        package: .benchmarkPackage
+    )
+}
+
+extension String {
+    
+    static let benchmark: Self = "Benchmark"
+    static let benchmarkPackage: Self = "swift-benchmark"
+    static let benchmarkURL: Self = "https://github.com/google/swift-benchmark"
+}
