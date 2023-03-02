@@ -3,41 +3,43 @@
 import PackageDescription
 
 let package = Package(
-    name: "EqualsOverhead",
+    name: "swift-fetch-contacts-benchmark",
     dependencies: [
         .benchmark
     ],
     targets: [
-        .equalsOverhead,
+        .contactFetch,
     ]
 )
 
-extension Product {
+private extension Product {
     
-    static let equalsOverhead = library(
-        name: .equalsOverhead,
+    static let contactFetch = library(
+        name: .contactFetch,
         targets: [
-            .equalsOverhead
+            .contactFetch
         ]
     )
 }
 
-extension Target {
+private extension Target {
     
-    static let equalsOverhead = executableTarget(
-        name: .equalsOverhead,
+    static let contactFetch = executableTarget(
+        name: .contactFetch,
         dependencies: [
             .benchmark
         ]
     )
 }
 
-extension String {
+private extension String {
     
-    static let equalsOverhead: Self = "EqualsOverhead"
+    static let contactFetch: Self = "ContactFetch"
 }
 
-extension Package.Dependency {
+// MARK: - Benchmark
+
+private extension Package.Dependency {
     
     static let benchmark = Package.Dependency.package(
         url: .benchmarkURL,
@@ -45,7 +47,7 @@ extension Package.Dependency {
     )
 }
 
-extension Target.Dependency {
+private extension Target.Dependency {
     
     static let benchmark = product(
         name: .benchmark,
@@ -53,7 +55,7 @@ extension Target.Dependency {
     )
 }
 
-extension String {
+private extension String {
     
     static let benchmark: Self = "Benchmark"
     static let benchmarkPackage: Self = "swift-benchmark"
