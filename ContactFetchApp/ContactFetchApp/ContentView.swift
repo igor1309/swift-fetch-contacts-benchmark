@@ -20,12 +20,7 @@ struct ContentView: View {
         VStack(spacing: 32) {
             
             Color.clear
-                .overlay {
-                    viewModel.duration.map {
-                        Text($0.formatted())
-                            .font(.largeTitle)
-                    }
-                }
+                .overlay { viewModel.result.map(resultView) }
             
             Picker("Select keys", selection: $viewModel.keys) {
                 ForEach(ContactKeys.allCases, id: \.self) { key in
@@ -38,6 +33,22 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
         }
         .padding()
+    }
+    
+    @ViewBuilder
+    private func resultView(result: Result<TimeInterval, Error>) -> some View {
+        
+        switch result {
+        case let .success(timeInterval):
+             Text(timeInterval.formatted())
+                .font(.largeTitle)
+            
+        case let .failure(error):
+            Text(error.localizedDescription)
+                .foregroundColor(.red)
+                .font(.title)
+        }
+
     }
 }
 
