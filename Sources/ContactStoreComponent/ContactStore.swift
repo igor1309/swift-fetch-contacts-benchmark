@@ -39,9 +39,17 @@ public final class ContactStore {
         return identifiers
     }
     
-    public func grantAccess() throws {
+    public func grantAccess(completion: @escaping (Result<Bool, Error>) -> Void) {
         
-        throw NSError(domain: "unimplemented", code: 0)
+        store.requestAccess(for: .contacts) { bool, error in
+            
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            completion(.success(bool))
+        }
     }
     
     public func fetch(
