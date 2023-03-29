@@ -8,19 +8,27 @@
 import Contacts
 import Foundation
 
-struct Contact {
+public struct Contact {
     
     typealias ID = String // better would be Tagged<Self, String>
     
-    var id: String { phone }
-    let phone: String
-    let firstName: String?
-    let middleName: String?
-    let lastName: String?
-    let avatar: ImageData?
+    public var id: String { phone }
+    public let phone: String
+    public let firstName: String?
+    public let middleName: String?
+    public let lastName: String?
+    public let avatar: ImageData?
+    
+    public init(phone: String, firstName: String?, middleName: String?, lastName: String?, avatar: ImageData?) {
+        self.phone = phone
+        self.firstName = firstName
+        self.middleName = middleName
+        self.lastName = lastName
+        self.avatar = avatar
+    }
 }
 
-extension Contact {
+public extension Contact {
     
     enum SortOrder {
         
@@ -38,7 +46,7 @@ extension Contact {
     }
 }
 
-extension Contact.SortOrder {
+public extension Contact.SortOrder {
     
     var cnContactSortOrder: CNContactSortOrder {
         
@@ -52,7 +60,7 @@ extension Contact.SortOrder {
     }
 }
 
-extension Contact {
+public extension Contact {
     
     init?(with cnContact: CNContact) {
         
@@ -82,7 +90,7 @@ extension Contact {
     }
 }
 
-struct ImageData: Codable, Equatable {
+public struct ImageData: Codable, Equatable {
     
-    let data: Data
+    public let data: Data
 }
