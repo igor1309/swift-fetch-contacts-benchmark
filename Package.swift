@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
     name: "swift-fetch-contacts-benchmark",
+    products: [
+        .contactStoreComponent,
+    ],
     dependencies: [
         .benchmark
     ],
@@ -19,6 +22,13 @@ private extension Product {
         name: .contactFetch,
         targets: [
             .contactFetch
+        ]
+    )
+    
+    static let contactStoreComponent = library(
+        name: .contactStoreComponent,
+        targets: [
+            .contactStoreComponent
         ]
     )
 }

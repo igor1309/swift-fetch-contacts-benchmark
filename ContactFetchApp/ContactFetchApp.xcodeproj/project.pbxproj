@@ -11,7 +11,6 @@
 		2A086CE629D4B7AB00D53EFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A086CE529D4B7AB00D53EFD /* ContentView.swift */; };
 		2A086CE829D4B7AC00D53EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A086CE729D4B7AC00D53EFD /* Assets.xcassets */; };
 		2A086CEB29D4B7AC00D53EFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A086CEA29D4B7AC00D53EFD /* Preview Assets.xcassets */; };
-		2A086CF529D4B7F200D53EFD /* ContactFetch in Frameworks */ = {isa = PBXBuildFile; productRef = 2A086CF429D4B7F200D53EFD /* ContactFetch */; };
 		2A086CF729D4B9DB00D53EFD /* ContactKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A086CF629D4B9DB00D53EFD /* ContactKeys.swift */; };
 		2A086CF929D4BB3100D53EFD /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A086CF829D4BB3100D53EFD /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A086CF529D4B7F200D53EFD /* ContactFetch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +102,6 @@
 			);
 			name = ContactFetchApp;
 			packageProductDependencies = (
-				2A086CF429D4B7F200D53EFD /* ContactFetch */,
 			);
 			productName = ContactFetchApp;
 			productReference = 2A086CE029D4B7AB00D53EFD /* ContactFetchApp.app */;
@@ -366,13 +363,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2A086CF429D4B7F200D53EFD /* ContactFetch */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ContactFetch;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A086CD829D4B7AB00D53EFD /* Project object */;
 }
