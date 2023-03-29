@@ -4,4 +4,4 @@ Exploring the difference of fetching contact identifiers (`CNContactIdentifierKe
 
 AddressBook abscess should be granted.
 
-Select scheme and `run`, see benchmark output in console.
+Select scheme `ContactFetchApp` and run the app, select key set to fetch tap `Fetch Contacts` button and see measured time.
