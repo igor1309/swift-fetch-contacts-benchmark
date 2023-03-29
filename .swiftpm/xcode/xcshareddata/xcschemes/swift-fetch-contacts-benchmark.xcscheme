@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EqualsOverhead"
-               BuildableName = "EqualsOverhead"
-               BlueprintName = "EqualsOverhead"
+               BlueprintIdentifier = "ContactFetch"
+               BuildableName = "ContactFetch"
+               BlueprintName = "ContactFetch"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ContactStoreComponent"
+               BuildableName = "ContactStoreComponent"
+               BlueprintName = "ContactStoreComponent"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,9 +45,9 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,9 +59,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EqualsOverhead"
-            BuildableName = "EqualsOverhead"
-            BlueprintName = "EqualsOverhead"
+            BlueprintIdentifier = "ContactFetch"
+            BuildableName = "ContactFetch"
+            BlueprintName = "ContactFetch"
             ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EqualsOverhead"
-            BuildableName = "EqualsOverhead"
-            BlueprintName = "EqualsOverhead"
+            BlueprintIdentifier = "ContactFetch"
+            BuildableName = "ContactFetch"
+            BlueprintName = "ContactFetch"
             ReferencedContainer = "container:">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -9,6 +9,7 @@ let package = Package(
     ],
     targets: [
         .contactFetch,
+        .contactStoreComponent,
     ]
 )
 
@@ -27,14 +28,25 @@ private extension Target {
     static let contactFetch = executableTarget(
         name: .contactFetch,
         dependencies: [
-            .benchmark
+            .benchmark,
+            .contactStoreComponent,
         ]
     )
+    
+    static let contactStoreComponent = target(
+        name: .contactStoreComponent
+    )
+}
+
+private extension Target.Dependency {
+    
+    static let contactStoreComponent = byName(name: .contactStoreComponent)
 }
 
 private extension String {
     
     static let contactFetch: Self = "ContactFetch"
+    static let contactStoreComponent: Self = "ContactStoreComponent"
 }
 
 // MARK: - Benchmark

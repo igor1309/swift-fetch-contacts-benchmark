@@ -6,6 +6,7 @@
 //
 
 import Benchmark
+import ContactStoreComponent
 
 let contactFetch = BenchmarkSuite(name: "Contact Fetch") {
     
