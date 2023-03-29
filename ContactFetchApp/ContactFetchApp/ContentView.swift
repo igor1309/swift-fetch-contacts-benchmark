@@ -40,7 +40,7 @@ struct ContentView: View {
         
         switch result {
         case let .success(timeInterval):
-             Text(timeInterval.formatted())
+             Text(timeInterval.formatted() + " sec")
                 .font(.largeTitle)
             
         case let .failure(error):
